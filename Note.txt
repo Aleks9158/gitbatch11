@@ -10,3 +10,9 @@ your file /folders name in the  . wont be tracked
 2. Use git add  .to track all files
 the files appearing in green represents they are in staging area
 3.git commit -m "message" to make a commit in the repo
+
+4.to see which files are there in the staging area we have command git ls -files
+
+5 to remove any file from the staging area use the command git rm --cached filename
+6.To look at commits
+git log
