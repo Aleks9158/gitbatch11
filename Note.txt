@@ -16,3 +16,9 @@ the files appearing in green represents they are in staging area
 5 to remove any file from the staging area use the command git rm --cached filename
 6.To look at commits
 git log
+ Head -->master(points to the commit in repo which you have in your working directory :::
+ by default it points to the latest commit )
+ 7. git diff shows us the difference in the files in "staging area" and the "working directory"
+ 8. git diff --staged show the difference in the files in "staging area" and the  "repo"
+
+ git restore filename --> to restore a file from your staging area
