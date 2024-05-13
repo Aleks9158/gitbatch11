@@ -22,3 +22,18 @@ git log
  8. git diff --staged show the difference in the files in "staging area" and the  "repo"
 
  git restore filename --> to restore a file from your staging area
+
+ Connecting to github
+ 1.Establish a link  --> git remote add origin "url"
+ 2.name the branch --> git branch -M main we have to run these commands
+ only once in start to connect to the repo aafter thatwe do not need them
+ 3.git remote -v -->to check the adress of remote to which your local is connected
+ 4.git remote remove origin --> to remove the already established connection
+ ---------------------------zip download-------------------------
+ download the code (from the latest commit )that is there in the github
+ ------------------------------Git clone------------------------------
+Will download the whole repository so that everyone has the same exact history
+while working on the project open your terminal at the point to clone command
+get  "url"
+
+
