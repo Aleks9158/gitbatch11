@@ -26,8 +26,10 @@ git log
  Connecting to github
  1.Establish a link  --> git remote add origin "url"
  2.name the branch --> git branch -M main we have to run these commands
- only once in start to connect to the repo aafter thatwe do not need them
+ only once in start to connect to the repo after that we do not need them
  3.git remote -v -->to check the adress of remote to which your local is connected
+ git remote -v
+ Эта команда используется для просмотра подключенных удаленных репозиториев.
  4.git remote remove origin --> to remove the already established connection
  ---------------------------zip download-------------------------
  download the code (from the latest commit )that is there in the github
@@ -35,5 +37,19 @@ git log
 Will download the whole repository so that everyone has the same exact history
 while working on the project open your terminal at the point to clone command
 get  "url"
+----------------git pull and git fetch--------------------
+git fetch -->which will tell you the status of your repo ?is there any update that needs
+to be
+Команды git pull и git fetch используются для обновления локального репозитория (чтобы скачать последние коммиты).
+
+git fetch скачивает обновления из удаленного репозитория (remote), но не сливает их с текущей веткой.
+Другими словами вы скачаете новые коммиты, но не добавите их в историю изменений локального репозитория.
+Для завершения процесса обновления нужно будет сделать еще git merge.
+Эта операция безопасна для выполнения в любое время т.к. она не вносит изменения в локальную ветку.
+
+git pull это команда-псевдоним сразу двух git команд - git fetch и git merge.
+Т.е. когда вы обновляете локальный репозиторий с помощью git pull, то все изменения не просто будут скачены,
+еще и внедрятся (объединятся) в ваш локальный репозиторий. Другими словами эта команда обновит ваш локальный репозиторий
+до состояния на сервере.
 
 
