@@ -84,4 +84,104 @@ git pull это команда-псевдоним сразу двух git ком
 еще и внедрятся (объединятся) в ваш локальный репозиторий. Другими словами эта команда обновит ваш локальный репозиторий
 до состояния на сервере.
 
+---------------------Review class git
+В процессе написания кода может возникнуть ситуация, когда нужно срочно
+переключиться на другую ветку (использовать git checkout) — или, например,
+внести правки, которые относятся к другой задаче. Однако новые изменения еще
+не готовы к тому, чтобы их коммитить и добавлять в репозиторий, — при этом
+терять их нельзя. В таком случае, как и во многих других, полезной окажется
+команда git stash.
+Git stash перемещает текущие изменения (так называемые local changes) в
+локальную директорию, которая выполняет роль специального хранилища,
+то есть скрывает эти изменения, сохраняя их отдельно, с опцией вернуть позже,
+когда это понадобится. Таким образом, файлы рабочей копии возвращаются
+ своему исходному состоянию. Внесенные изменения помещаются в стек, после чего
+ их можно легко оттуда извлечь. Важно отметить, что в рабочей копии исчезнут
+ все измененные файлы, — независимо от того, добавлены они в индекс или нет.
+После выполнения этой строки все несохраненные изменения будут сохранены,
+ но не закоммичены. Эти отложенные участки будут сохранены в локальном
+ репозитории и при выполнении команды git push не будут переданы на сервер.
+ Такие изменения иногда называют «прятанья».
 
+Stashing :
+Stashing saves the snapshot of the code in the stashing area (temporary storage)
+AND reverts the condition of the working directory to the point of the last commit.
+
+on desktop create a folder stash,
+in there create 3 text files :
+A B C
+
+1. Move these files in the stashing area
+as this files are untracked sowe will use "git stash -u" to stash them
+cледующая команда git "stash -m"
+
+Task
+move files B and C in story in staging area ,working directory
+if the history has not been commited yet --> git will ask you to make sure
+to commit it to  make it final oor stash it to save it for future use ....
+will not allow you to modify directly.
+
+........
+1. how to create a local repo
+2. 3-stage architecture (working directory,staging area ,repo)
+3. how to connect to github (why you can not connect multiple local to same repo)
+4. how to clone a code from the remote repository
+5. how to stash a code reapply the stash
+6. how to pull the code from the remote repository
+7. what are the steps to be followed if you are working in collaboration
+on a project and you want to make a commit?
+
+***********************Git class 05**********************
+
+Stashing:
+Scenario:
+
+requirement:
+Build a car
+
+Stashing :
+Stashing stores the snapshot of your current files/changes in a separate
+container and reverts the condition of your working directory to the
+last commit (it also changes the staging  area to last commit)
+
+.git stash -m "message"--> to stash the changes that u have made
+.git stash list --> to view the stashes
+.git stash apply index --> to apply a certain stash
+
+Important :
+if you have a stashed applied and you want to apply any previous stash what will you do?
+-------you can choose from following depending on scenarios-----------------------
+1.you must stash it first and then apply the previous stash
+2.you can commit it and then apply the stash
+
+
+Scenario:
+you are working on a project
+and you immediately need to make some changes in the code and send it to github ..
+but you have some nonfinalized changes that you do not want to send
+what will you do??
+
+1.i will stash my changes in the code
+2.i will make the changes in the code that my lead asked
+3.i will commit it and send the changes in the github
+4. i will apply the stash again
+Git stash in order to work on untracked files need to be stashed using
+git stash -u --> to stash untracked files
+
+ untracked files --->files that are not in the staging area-->not tracked by git--> appears in red
+ (they are just in working directory)(git stash -u)
+ tracked files -->in the staging area-->been tracked by git -->appear in green (git stash -m "message")
+
+ git stash other commands:
+.git stash drop index -->to delete a stash
+.git stash pop index -->to apply the stash and then delete it automatically
+
+-------------------Clone the Project-------------------------
+git fetch --> tells us if there is an update on the remote or not
+
+TIP:
+before making a commit
+use git fetch to make sure there are no updates
+if there are any updates
+stash your code ,pull the repo
+ then make the commit
